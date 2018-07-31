@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-xs-0 col-sm-1 col-md-1"></div>
+  <div class="col-xs-0 col-sm-10 col-md-10">
+    <app-filter
+      #filterTable
+      [filter]="filter"
+      [filterFunction]="filterFunction">
+    </app-filter>
+    <br>
+    <table class="table table-bordered table-condensed" style="text-align:center">
+        <thead class="header-table">
+          <th *ngFor="let key of dataColumn" (click)="sort(key)">
+            {{key}}
+            <i *ngIf="orderType && nameColumn === key" class="material-icons">&uarr;</i>
+            <i *ngIf="!orderType && nameColumn === key" class="material-icons">&darr;</i>
+          </th>
+          <th *ngFor="let option of options">{{option.name}}</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items; let i=index">
+            <td *ngFor="let key of dataColumn">{{item[key]}}</td>
+            <td *ngFor="let option of options">
+              <img *ngIf="option.type==='img'" src="../assets/{{option.img}}" class="img" (click)="functionDefault(i,option.name,items[i],option)">
+              <button *ngIf="option.type==='button'" class={{option.class}} (click)="functionDefault(i,option.name,items[i],option)">{{option.name}}</button>
+              <input type="text" *ngIf="option.type==='text'" class={{option.class}}>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+    <br>
+    <app-pagination 
+      #paginationTable 
+      [dataTable]="dataTable"
+      [itemsForPage]="itemsForPage"
+      [pagination]="pagination"
+      [filterValue]="inputName">
+    </app-pagination>
+  </div>
+  <div class="col-xs-0 col-sm-1 col-md-1"></div>
+</div>
+
