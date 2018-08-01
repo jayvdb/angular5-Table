@@ -12,7 +12,7 @@ export class PaginationComponent implements OnInit {
   @Input() filterValue;  
   public paginatedItems: any[];
   public pages: number;
-  public pageNumber : number = 0;
+  public pageNumber : number = 1;
   public currentIndex : number = 1;
   public pagesIndex : Array<number>;
   public pageStart : number = 1;
@@ -41,7 +41,7 @@ export class PaginationComponent implements OnInit {
       this.paginatedItems = this.dataTable;
       return;
     }
-    this.paginatedItems = this.filteredItems.slice((this.currentIndex - 1)*this.itemsForPage, (this.currentIndex) * this.itemsForPage);
+    this.paginatedItems = this.filteredItems.slice((this.currentIndex - 1) * this.itemsForPage, this.currentIndex * this.itemsForPage);//this.currentIndex * this.itemsForPage, this.currentIndex * this.itemsForPage + this.itemsForPage
     this.pagesIndex = this.paginationArray();
   }
 

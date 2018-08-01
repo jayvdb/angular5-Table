@@ -20,11 +20,24 @@ export class AppComponent {
 
   getDataItemsTable(){
     this.data = [
-      {name: 'download', description: 'img', country: 'img-table', age: ''},
-      {name: 'edit', description: 'img', country: 'btn-table', age: ''},
-      {name: 'delete', description: 'img', country: 'btn-table', age: ''},
-      {name: 'button', description: 'button', country: 'form-control', age: ''}
+      {name: 'test1', description: 'test1', country: 'img-table', age: ''},
+      {name: 'test2', description: 'test2', country: 'btn-table', age: ''},
+      {name: 'test3', description: 'test3', country: 'btn-table', age: ''},
+      {name: 'test4', description: 'test4', country: 'form-control', age: ''},
+      {name: 'test5', description: 'test5', country: 'img-table', age: ''},
+      {name: 'test6', description: 'test6', country: 'btn-table', age: ''},
+      {name: 'test7', description: 'test7', country: 'btn-table', age: ''},
+      {name: 'test8', description: 'test8', country: 'form-control', age: ''},
+      {name: 'test9', description: 'test9', country: 'img-table', age: ''},
+      {name: 'test10', description: 'test10', country: 'btn-table', age: ''},
+      {name: 'test11', description: 'test11', country: 'btn-table', age: ''},
+      {name: 'test12', description: 'test12', country: 'form-control', age: ''},
+      {name: 'test13', description: 'test13', country: 'img-table', age: ''},
+      {name: 'test14', description: 'test14', country: 'btn-table', age: ''},
+      {name: 'test15', description: 'test15', country: 'btn-table', age: ''},
+      {name: 'test16', description: 'test16', country: 'form-control', age: ''}
     ]
+    this.data.length = 10;
   }
 
   getDataColumnsTable(){
