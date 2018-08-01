@@ -57,7 +57,7 @@ export class PaginationComponent implements OnInit {
 
   nextPage(){
     if(this.currentIndex >= this.pages) return;
-    if(this.currentIndex > this.pageNumber){
+    if(this.currentIndex >= this.pageNumber){
           this.currentIndex ++;
     }
     this.paginateItems();
@@ -69,17 +69,14 @@ export class PaginationComponent implements OnInit {
   }
   
   FilterByName(){
+    var keys = Object.keys(this.dataTable[0]);
     this.filteredItems = [];
     if(this.filterValue != ""){
-      this.dataTable.forEach(element => {
-          if(element.name.toUpperCase().indexOf(this.filterValue.toUpperCase())>=0){
-            this.filteredItems.push(element);
-          }
-      });
+      this.filteredItems = this.dataTable.filter(e => keys.some(e2 => e[e2].includes(this.filterValue)));
     }else{
       this.filteredItems = this.dataTable;
     }
     console.log(this.filteredItems);
     this.start();
- }
+  }
 }

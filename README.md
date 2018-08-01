@@ -5,15 +5,14 @@
 ## Installation
 
 ``` javascript
-    npm i angular5Table
+    npm i angular5-table
 ```
-
 
 ## Configuration step 
 
 * Insert in your index.html the cdn link of bootstrap 4 or include the CSS style into angular-cli.json
 * Import in your module the angular5TableModule.
-* Insert the the angular5Table selector tag when you need insert him
+* Insert the the angular5Table selector tag when you need insert it
 * Configure the options data
 
 ## Usage and sample
@@ -47,7 +46,7 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
 ### import module
 
 ```javascript
-import {Angular5TableModule} from './Angular5-Table/angular5-table.module';
+import {Angular5TableModule} from 'angular5-table';
 ```
 
 ### selector tag 
