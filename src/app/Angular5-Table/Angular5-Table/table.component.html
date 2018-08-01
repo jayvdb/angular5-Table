@@ -20,7 +20,7 @@
           <tr *ngFor="let item of items; let i=index">
             <td *ngFor="let key of dataColumn">{{item[key]}}</td>
             <td *ngFor="let option of options">
-              <img *ngIf="option.type==='img'" src="../assets/{{option.img}}" class="img" (click)="functionDefault(i,option.name,items[i],option)">
+              <img *ngIf="option.type==='img'" src="../assets/{{option.url}}" class="img" (click)="functionDefault(i,option.name,items[i],option)">
               <button *ngIf="option.type==='button'" class={{option.class}} (click)="functionDefault(i,option.name,items[i],option)">{{option.name}}</button>
               <input type="text" *ngIf="option.type==='text'" class={{option.class}}>
             </td>

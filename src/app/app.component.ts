@@ -30,10 +30,10 @@ export class AppComponent {
   getDataColumnsTable(){
     this.objectKeys = Object.keys(this.data[0]);
     this.options = [
-      {name: 'download', type: 'img', class: 'img-table', img: 'test.png'},
-      {name: 'edit', type: 'img', class: 'btn-table', img: '../assets/test.png'},
-      {name: 'delete', type: 'img', class: 'btn-table', img: '../assets/test.png'},
-      {name: 'button', type: 'button', class: 'form-control', img: '../assets/test.png'},
+      {name: 'download', type: 'img', class: 'img-table', url: 'test.png'},
+      {name: 'edit', type: 'img', class: 'btn-table', url: '../assets/test.png'},
+      {name: 'delete', type: 'img', class: 'btn-table', url: '../assets/test.png'},
+      {name: 'button', type: 'button', class: 'form-control', url: ''},
     ];
   }
 
