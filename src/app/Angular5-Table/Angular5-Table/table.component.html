@@ -9,21 +9,23 @@
     <br>
     <table class="table table-bordered table-condensed" style="text-align:center">
         <thead class="header-table">
+          <th><!-- options --></th>
           <th *ngFor="let key of dataColumn" (click)="sort(key)">
             {{key}}
             <i *ngIf="orderType && nameColumn === key" class="material-icons">&uarr;</i>
             <i *ngIf="!orderType && nameColumn === key" class="material-icons">&darr;</i>
           </th>
-          <th *ngFor="let option of options">{{option.name}}</th>
         </thead>
         <tbody>
           <tr *ngFor="let item of items; let i=index">
-            <td *ngFor="let key of dataColumn">{{item[key]}}</td>
-            <td *ngFor="let option of options">
-              <img *ngIf="option.type==='img'" src="{{option.url}}" class="img" (click)="functionDefault(i,option.name,items[i],option)">
-              <button *ngIf="option.type==='button'" class={{option.class}} (click)="functionDefault(i,option.name,items[i],option)">{{option.name}}</button>
-              <input type="text" *ngIf="option.type==='text'" class={{option.class}}>
+            <td>
+              <span *ngFor="let option of options">
+                <img *ngIf="option.type==='img'" src="{{option.url}}" class={{option.class}} (click)="functionDefault(i,option.name,items[i],option)">
+                <button *ngIf="option.type==='button'" class={{option.class}} (click)="functionDefault(i,option.name,items[i],option)">{{option.name}}</button>
+                <input type="text" *ngIf="option.type==='text'" class={{option.class}}>
+              </span>
             </td>
+            <td *ngFor="let key of dataColumn">{{item[key]}}</td>
           </tr>
         </tbody>
     </table>
