@@ -9,16 +9,16 @@
     <br>
     <table class="table table-bordered table-condensed" style="text-align:center">
         <thead class="header-table">
-          <th><!-- options --></th>
-          <th *ngFor="let key of dataColumn" (click)="sort(key)">
+          <th class="no-border"><!-- options --></th>
+          <th class="table-head" *ngFor="let key of dataColumn" (click)="sort(key)">
             {{key}}
             <i *ngIf="orderType && nameColumn === key" class="material-icons">&uarr;</i>
             <i *ngIf="!orderType && nameColumn === key" class="material-icons">&darr;</i>
           </th>
         </thead>
         <tbody>
-          <tr *ngFor="let item of items; let i=index">
-            <td>
+          <tr *ngFor="let item of items; let i=index" class="address-detail">
+            <td class="no-border">
               <span *ngFor="let option of options">
                 <img *ngIf="option.type==='img'" src="{{option.url}}" class={{option.class}} (click)="functionDefault(i,option.name,items[i],option)">
                 <button *ngIf="option.type==='button'" class={{option.class}} (click)="functionDefault(i,option.name,items[i],option)">{{option.name}}</button>
