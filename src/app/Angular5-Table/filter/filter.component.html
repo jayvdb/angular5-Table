@@ -6,7 +6,7 @@
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fa fa-search"></i></div>
           </div>
-          <input class="form-control" placeholder="Search.." id="inputName" (keyup)="filterFunction()" [(ngModel)]="filterValue">
+          <input class="form-control" [placeholder]="filterPlaceholder" id="inputName" (keyup)="filterFunction()" [(ngModel)]="filterValue">
         </div>
     </div>
   <div class="col-xs-0 col-sm-4 col-md-4"></div>

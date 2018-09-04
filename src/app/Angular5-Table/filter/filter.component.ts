@@ -8,6 +8,7 @@ import { Component, OnInit, Input, EventEmitter, DoCheck} from '@angular/core';
 export class FilterComponent implements OnInit, DoCheck {
   @Input() filter;
   @Input() filterFunction;
+  @Input() filterPlaceholder;
   public filterValue: string;
 
   constructor() { }

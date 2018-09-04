@@ -18,6 +18,7 @@ export class TableComponent implements OnInit,DoCheck {
   @Input() filter;
   @Input() sortable;
   @Input() functionDefault;
+  @Input() filterPlaceholder;
   public items: any[] = [];
   public columsKeys: any[] = [];
   public orderType: boolean;
