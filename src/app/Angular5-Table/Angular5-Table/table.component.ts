@@ -54,6 +54,10 @@ export class TableComponent implements OnInit,DoCheck {
     });
   }
 
+  localFunctionDefault(index: number, type: any, item: any, option: any) {
+    this.functionDefault(index. type, item, option);
+  }
+
   filterTable(){
     this.paginationComponent.FilterByName();
   }
