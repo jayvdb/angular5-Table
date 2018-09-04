@@ -2,15 +2,6 @@
   "name": "angular5-table",
   "version": "0.0.3",
   "license": "MIT",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "packagr": "ng-packagr -p ng-package.json"
-  },
   "private": false,
   "peerDependencies": {
     "@angular/animations": "^5.0.0",
@@ -50,5 +41,18 @@
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2"
+  },
+  "main": "bundles/angular5-table.umd.js",
+  "module": "fesm5/angular5-table.js",
+  "es2015": "fesm2015/angular5-table.js",
+  "esm5": "esm5/angular5-table.js",
+  "esm2015": "esm2015/angular5-table.js",
+  "fesm5": "fesm5/angular5-table.js",
+  "fesm2015": "fesm2015/angular5-table.js",
+  "typings": "angular5-table.d.ts",
+  "metadata": "angular5-table.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.7.1"
   }
 }
