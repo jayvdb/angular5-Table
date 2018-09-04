@@ -1,0 +1,13 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+export { Angular5TableModule } from './public_api';
+export { TableComponent as ɵa } from './src/app/Angular5-Table/Angular5-Table/table.component';
+export { FilterComponent as ɵb } from './src/app/Angular5-Table/filter/filter.component';
+export { PaginationComponent as ɵc } from './src/app/Angular5-Table/pagination/pagination.component';
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW5ndWxhcjUtdGFibGUuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9hbmd1bGFyNS10YWJsZS8iLCJzb3VyY2VzIjpbImFuZ3VsYXI1LXRhYmxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFJQSxvQ0FBYyxjQUFjLENBQUM7QUFFN0IsT0FBTyxFQUFDLGNBQWMsSUFBSSxFQUFFLEVBQUMsTUFBTSx5REFBeUQsQ0FBQztBQUM3RixPQUFPLEVBQUMsZUFBZSxJQUFJLEVBQUUsRUFBQyxNQUFNLGtEQUFrRCxDQUFDO0FBQ3ZGLE9BQU8sRUFBQyxtQkFBbUIsSUFBSSxFQUFFLEVBQUMsTUFBTSwwREFBMEQsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogR2VuZXJhdGVkIGJ1bmRsZSBpbmRleC4gRG8gbm90IGVkaXQuXG4gKi9cblxuZXhwb3J0ICogZnJvbSAnLi9wdWJsaWNfYXBpJztcblxuZXhwb3J0IHtUYWJsZUNvbXBvbmVudCBhcyDJtWF9IGZyb20gJy4vc3JjL2FwcC9Bbmd1bGFyNS1UYWJsZS9Bbmd1bGFyNS1UYWJsZS90YWJsZS5jb21wb25lbnQnO1xuZXhwb3J0IHtGaWx0ZXJDb21wb25lbnQgYXMgybVifSBmcm9tICcuL3NyYy9hcHAvQW5ndWxhcjUtVGFibGUvZmlsdGVyL2ZpbHRlci5jb21wb25lbnQnO1xuZXhwb3J0IHtQYWdpbmF0aW9uQ29tcG9uZW50IGFzIMm1Y30gZnJvbSAnLi9zcmMvYXBwL0FuZ3VsYXI1LVRhYmxlL3BhZ2luYXRpb24vcGFnaW5hdGlvbi5jb21wb25lbnQnOyJdfQ==
