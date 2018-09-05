@@ -18,7 +18,7 @@
           </th>
         </thead>
         <tbody>
-          <tr *ngFor="let item of items; let i=index" class="address-row">
+          <tr *ngFor="let item of items; let i=index">
             <td class="table-options no-border">
               <span *ngFor="let option of options">
                 <img *ngIf="option.type==='img'" src="{{option.url}}" class={{option.class}} (click)="functionDefault(i,option.name,items[i],option)">
