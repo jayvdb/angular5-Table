@@ -11,7 +11,7 @@
     <table class="table table-bordered table-condensed" style="text-align:center">
         <thead class="header-table">
           <th class="table-head table-options no-border"><!-- options --></th>
-          <th *ngFor="let key of dataColumn" (click)="sort(key)" [ngClass]="'table-head table-head-' + key">
+          <th *ngFor="let key of dataColumn" (click)="sort(key)" [ngClass]="'table-head table-head-' + key.toLowerCase()">
             {{key}}
             <i *ngIf="orderType && nameColumn === key" class="material-icons">&uarr;</i>
             <i *ngIf="!orderType && nameColumn === key" class="material-icons">&darr;</i>
@@ -26,7 +26,7 @@
                 <input type="text" *ngIf="option.type==='text'" class={{option.class}}>
               </span>
             </td>
-            <td *ngFor="let key of dataColumn" [ngClass]="'td-' + key">{{item[key]}}</td>
+            <td *ngFor="let key of dataColumn" [ngClass]="'td-' + key.toLowerCase()">{{item[key]}}</td>
           </tr>
         </tbody>
     </table>
