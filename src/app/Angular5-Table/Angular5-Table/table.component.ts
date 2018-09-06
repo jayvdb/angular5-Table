@@ -19,6 +19,9 @@ export class TableComponent implements OnInit,DoCheck {
   @Input() sortable;
   @Input() functionDefault;
   @Input() filterPlaceholder;
+
+  @Output() callBackFunction: EventEmitter<any> = new EventEmitter<any>();
+
   public items: any[] = [];
   public columsKeys: any[] = [];
   public orderType: boolean;
@@ -57,6 +60,10 @@ export class TableComponent implements OnInit,DoCheck {
 
   filterTable(){
     this.paginationComponent.FilterByName();
+  }
+
+  selectCallBack(data: object): void {
+    this.callBackFunction.emit(data);
   }
 
 }
