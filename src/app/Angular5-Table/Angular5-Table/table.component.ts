@@ -62,8 +62,9 @@ export class TableComponent implements OnInit,DoCheck {
     this.paginationComponent.FilterByName();
   }
 
-  selectCallBack(data: object): void {
-    this.callBackFunction.emit(data);
+  selectCallBack(data: object, event: any): void {
+    event.data = data;
+    this.callBackFunction.emit(event);
   }
 
 }
