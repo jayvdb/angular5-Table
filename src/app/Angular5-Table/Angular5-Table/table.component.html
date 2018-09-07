@@ -27,7 +27,7 @@
               </span>
             </td>
             <td *ngFor="let key of dataColumn"
-                [ngClass]="'td-' + key.toLowerCase()"
+                [ngClass]="'td-' + key.toLowerCase().replace(' ', '_')"
                 (click)="selectCallBack($event, item, key)"
                 >
               <span *ngIf="item[key]">{{item[key]}}</span>
