@@ -28,15 +28,15 @@
             <td class="table-options no-border">
               <span *ngFor="let option of options">
                 <img *ngIf="option.type==='img'" src="{{option.url}}"
-                     [ngClass]="option.class + ' table-option-' + option.name"
-                     (click)="functionDefault(i,option.name,items[i],option)">
+                     [ngClass]="option.class + ' table-option-' + option.name.toLowerCase().replace(' ', '_')"
+                     (click)="functionDefault(i,option.name.toLowerCase().replace(' ', '_'),items[i],option)">
                 <button *ngIf="option.type==='button'"
-                        [ngClass]="option.class + ' table-option-' + option.name"
-                        (click)="functionDefault(i,option.name,items[i],option)">
+                        [ngClass]="option.class + ' table-option-' + option.name.toLowerCase().replace(' ', '_')"
+                        (click)="functionDefault(i,option.name.toLowerCase().replace(' ', '_'),items[i],option)">
                   {{option.name}}</button>
                 <input *ngIf="option.type==='text'"
                        type="text"
-                       [ngClass]="option.class + ' table-option-' + option.name">
+                       [ngClass]="option.class + ' table-option-' + option.name.toLowerCase().replace(' ', '_')">
               </span>
             </td>
           </tr>
