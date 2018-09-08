@@ -8,7 +8,7 @@
       [filterPlaceholder]="filterPlaceholder">
     </app-filter>
     <br>
-    <table class="table table-bordered table-condensed" style="text-align:center">
+    <table *ngIf="show_table" class="table table-bordered table-condensed" style="text-align:center">
         <thead class="header-table">
           <th *ngFor="let key of dataColumn" (click)="sort(key)" [ngClass]="'table-head table-head-' + key.toLowerCase()">
             {{key}}

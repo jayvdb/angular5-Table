@@ -1,4 +1,4 @@
-import { Component,OnInit,DoCheck,Input,ViewChild,Output, EventEmitter } from '@angular/core';
+import { Component,OnInit,OnChanges,DoCheck,Input,ViewChild,Output, EventEmitter } from '@angular/core';
 import { PaginationComponent } from '../pagination/pagination.component';
 import { FilterComponent } from '../filter/filter.component';
 
@@ -7,13 +7,14 @@ import { FilterComponent } from '../filter/filter.component';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
 })
-export class TableComponent implements OnInit,DoCheck {
+export class TableComponent implements OnInit,OnChanges,DoCheck {
   @ViewChild('paginationTable') paginationComponent: PaginationComponent;
   @ViewChild('filterTable') filterComponent: FilterComponent;
   @Input() dataTable;
   @Input() dataColumn;
   @Input() itemsForPage;
   @Input() pagination;
+  @Input() show_table = true;
   @Input() options;
   @Input() filter;
   @Input() sortable;
@@ -21,6 +22,7 @@ export class TableComponent implements OnInit,DoCheck {
   @Input() filterPlaceholder;
 
   @Output() callBackFunction: EventEmitter<any> = new EventEmitter<any>();
+  @Output() currentDataTableChange: EventEmitter<any> = new EventEmitter<any>();
 
   public items: any[] = [];
   public columsKeys: any[] = [];
@@ -31,13 +33,26 @@ export class TableComponent implements OnInit,DoCheck {
   public mergeObject: any[] = [];
 
   ngOnInit(){
-    console.log(this.dataTable);
+    console.log(`table data: ${this.dataTable}`);
     this.filterFunction = this.filterTable.bind(this);
   }
 
   ngDoCheck(){
     this.inputName = this.filterComponent.filterValue;
     this.items = this.paginationComponent.paginatedItems;
+    console.log(`ngDoCheck(): items = ${this.items}`);
+    this.currentDataTableChange.emit(this.items);
+  }
+
+  ngOnChanges(){
+    this.ngDoCheck();
+    console.log(`ngOnChanges(): items = ${this.items}`);
+  }
+
+  @Input()
+  get currentDataTable(){
+    console.log(`currentDataTable(): items = ${this.items}`);
+    return this.items;
   }
 
   sort(nameColumnParam: string){
@@ -56,9 +71,14 @@ export class TableComponent implements OnInit,DoCheck {
             return 0;
         }
     });
+    this.currentDataTableChange.emit(this.items);
   }
 
   filterTable(){
+    if (!this.dataTable) {
+      console.log(`filterTable without a dataTable`);
+      return;
+    }
     this.paginationComponent.FilterByName();
   }
 

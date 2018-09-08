@@ -5,7 +5,7 @@ import { Component, OnInit,OnChanges,Input } from '@angular/core';
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.css']
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent implements OnInit, OnChanges {
   @Input() dataTable;
   @Input() itemsForPage;
   @Input() pagination;
@@ -19,13 +19,23 @@ export class PaginationComponent implements OnInit {
   public filteredItems: any[];
 
   ngOnInit() {
-    this.filteredItems = this.dataTable;
+    this.ngOnChanges();
+  }
+
+  ngOnChanges(){
+    console.log(`onchange setting filteredItems..`);
+    this.FilterByName();
     this.start();
   }
 
   start(){
+    if (!this.filteredItems) {
+      return;
+    }
+    console.log(`paginating ${this.filteredItems.length} filtered items...`);
     this.pages = Math.ceil(this.filteredItems.length / this.itemsForPage);
     this.paginateItems();
+    console.log(`paginated ${this.paginatedItems.length} filtered items.`);
   }
   
   paginationArray(): any{
@@ -37,8 +47,12 @@ export class PaginationComponent implements OnInit {
   }
 
   paginateItems(){
-    if(!this.pagination){
+    if(!this.dataTable){
       this.paginatedItems = this.dataTable;
+      return;
+    }
+    if(!this.pagination){
+      this.paginatedItems = this.filteredItems;
       return;
     }
     this.paginatedItems = this.filteredItems.slice((this.currentIndex - 1) * this.itemsForPage, this.currentIndex * this.itemsForPage);//this.currentIndex * this.itemsForPage, this.currentIndex * this.itemsForPage + this.itemsForPage
@@ -69,10 +83,16 @@ export class PaginationComponent implements OnInit {
   }
   
   FilterByName(){
+    if (!this.dataTable || !this.dataTable[0]) {
+      console.log(`FilterByName without a dataTable`);
+      return;
+    }
+    console.log(`FilterByName ${this.filterValue}`);
     var keys = Object.keys(this.dataTable[0]);
+    console.log(`FilterByName keys = ${keys}`);
     this.filteredItems = [];
-    if(this.filterValue != ""){
-      this.filteredItems = this.dataTable.filter(e => keys.some(e2 => e[e2] !== undefined && e[e2] !== null && typeof e[e2] === 'string' ? e[e2].includes(this.filterValue) : undefined));
+    if(this.filterValue !== undefined && this.filterValue != ""){
+      this.filteredItems = this.dataTable.filter(e => keys.some(e2 => e[e2] !== undefined && e[e2] !== null && typeof e[e2] === 'string' ? e[e2].toLowerCase().includes(this.filterValue.toLowerCase()) : undefined));
     }else{
       this.filteredItems = this.dataTable;
     }
