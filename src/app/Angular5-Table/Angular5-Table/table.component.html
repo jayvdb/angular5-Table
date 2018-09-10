@@ -7,7 +7,7 @@
       [filterFunction]="filterFunction"
       [filterPlaceholder]="filterPlaceholder">
     </app-filter>
-    <br>
+    <br *ngIf="show_table">
     <table *ngIf="show_table" class="table table-bordered table-condensed" style="text-align:center">
         <thead class="header-table">
           <th *ngFor="let key of dataColumn" (click)="sort(key)" [ngClass]="'table-head table-head-' + key.toLowerCase()">
@@ -42,7 +42,7 @@
           </tr>
         </tbody>
     </table>
-    <br>
+    <br *ngIf="show_table" >
     <app-pagination 
       #paginationTable 
       [dataTable]="dataTable"
