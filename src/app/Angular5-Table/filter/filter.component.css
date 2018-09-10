@@ -1,8 +1,4 @@
-.input-group{
-  display:table;
-  width:100%;
-}
-.input-group .input-field,
-.input-group .input-group-addon{
-  display:table-cell;
+.table-search-filter {
+  display: table;
+  width: 100%;
 }
