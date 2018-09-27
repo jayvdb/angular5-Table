@@ -10,6 +10,7 @@ import { FilterComponent } from '../filter/filter.component';
 export class TableComponent implements OnInit,OnChanges,DoCheck {
   @ViewChild('paginationTable') paginationComponent: PaginationComponent;
   @ViewChild('filterTable') filterComponent: FilterComponent;
+  @Input() title;
   @Input() dataTable;
   @Input() dataColumn;
   @Input() itemsForPage;
