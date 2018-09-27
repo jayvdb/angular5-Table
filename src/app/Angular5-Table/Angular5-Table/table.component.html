@@ -7,6 +7,7 @@
       [filterFunction]="filterFunction"
       [filterPlaceholder]="filterPlaceholder">
     </app-filter>
+    <div *ngIf="title" class="search-table-title">{{title}}</div>
     <table *ngIf="show_table" class="table table-bordered table-condensed" style="text-align:center">
         <thead class="header-table">
           <th *ngFor="let key of dataColumn" (click)="sort(key)" [ngClass]="'table-head table-head-' + key.toLowerCase()">

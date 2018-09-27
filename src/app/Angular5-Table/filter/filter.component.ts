@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, DoCheck} from '@angular/core';
+import { Component, OnInit, Input, DoCheck} from '@angular/core';
 
 @Component({
   selector: 'app-filter',
